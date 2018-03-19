@@ -1,8 +1,12 @@
 body{
-    background: url(http://eskipaper.com/images/best-hd-wallpapers-19.jpg);
+    background: url(http://eskipaper.com/images/best-hd-wallpapers-19.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
 }
 
 .card{
     background:white;
-    opacity: .8;
 }

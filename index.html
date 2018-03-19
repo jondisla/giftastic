@@ -13,16 +13,17 @@
 <body>
     <div id="searchBox"></div>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" style="color:red;">Car Lookup App</a>
+        <a class="navbar-brand" style="color:red;">Car GIF Lookup App</a>
         <form class="form-inline">
-            <input id="type" class="form-control mr-sm-2" type="search" placeholder="Search by Brand" aria-label="Search" >
-            <button class="btn btn-danger my-2 my-sm-0" type="button">Go</button>
+            <input id="searchtext" class="form-control mr-sm-2" type="search" placeholder="Search by Brand" aria-label="Search" >
+            <button id="btnSearch" class="btn btn-danger my-2 my-sm-0" type="button" onclick="getData()">Go</button>
         </form>
     </nav>
     </div>
     <div class="container">
         <div class="card">
             <div class="card-body">
+                <div id="test"></div>
                 <!-- <div class="row">
                 <div class="col">
                     
@@ -41,7 +42,6 @@
             </div>
         </div>
     </div>
-
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
