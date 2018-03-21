@@ -9,16 +9,31 @@ function addBrand() {
 
     newButtons = $('#buttonMenu').prepend('<button id="buttons" class="btn btn-primary" style="margin-left:5px;margin-bottom:5px">' + carArray[i])}
 
-    $('#type').keyup(function() {
-        var userInput = $('#type').val()
-        console.log(userInput.toLowerCase())
+    var words = $('#type').keypress(function() {
+        var userIn = $('#type').val()
+        console.log(userIn.toLowerCase())
 
     $('.btn-danger').click(function() {
-        $('#buttons').append(userInput)
+        $('#buttons').append(userIn)
     })
-
+    
     
 })}
+
+
+$('#buttonMenu').click(function(){/////////////????????????????????????
+    for (var i = 0; i < carArray.length; i++) {
+        
+        if (carArray[i] === "Mazda") {
+          found = true;
+          console.log('yes')
+        }else{
+            console.log('not')
+        }
+          break;
+}})
+    
+
 newvar=['first', 'second']
     $('#test').on('click', function(){
         newvar='first'
