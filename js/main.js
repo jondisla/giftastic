@@ -7,7 +7,7 @@ var newButtons;
 function addBrand() {
     for (var i = 0; i < carArray.length; i++) {
 
-    newButtons = $('.card-body').prepend('<button id="buttons" class="btn btn-primary" style="margin-left:5px;margin-bottom:5px">' + carArray[i])}
+    newButtons = $('#buttonMenu').prepend('<button id="buttons" class="btn btn-primary" style="margin-left:5px;margin-bottom:5px">' + carArray[i])}
 
     $('#type').keyup(function() {
         var userInput = $('#type').val()
@@ -17,14 +17,30 @@ function addBrand() {
         $('#buttons').append(userInput)
     })
 
+    
 })}
+newvar=['first', 'second']
+    $('#test').on('click', function(){
+        newvar='first'
+        if (newvar[1])
+        console.log(".,..")
+
+        // $('#buttons').each(function(){
+        //     var index = carArray
+        //     if (index === 'Mazda'){
+        //     console.log('perfect')
+        //     }else{          $('#test')
+        //         console.log('yess')
+        //     }
+        // })
+})
 
 function getData(){
 
     // var userInput = $('#searchtext').val()
     var userInput = $('#searchtext').val();
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userInput + "&api_key=lj5JtcnVU0ydCVDeb7Y7pj7m3ZyfY3k4";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userInput + "&api_key=lj5JtcnVU0ydCVDeb7Y7pj7m3ZyfY3k4&limit=10&offset=0&rating=PG&lang=en";
 
     $.ajax({
         url: queryURL,
