@@ -1,5 +1,3 @@
-
-
 var carArray = ['Lancer', 'Subaru', 'Ferrari', 'BMW', 'Honda', 'Volkswagon', 'Mazda'];
 
 var newButtons;
@@ -7,7 +5,7 @@ var newButtons;
 function addBrand() {
     for (var i = 0; i < carArray.length; i++) {
 
-    newButtons = $('#buttonMenu').prepend('<button id="buttons" class="btn btn-primary" style="margin-left:5px;margin-bottom:5px">' + carArray[i])}
+    newButtons = $('#buttonMenu').prepend('<button data-index="'+ i +'" class="btn btn-primary gifbutton" style="margin-left:5px;margin-bottom:5px">' + carArray[i])}
 
     var words = $('#type').keypress(function() {
         var userIn = $('#type').val()
@@ -21,17 +19,9 @@ function addBrand() {
 })}
 
 
-$('#buttonMenu').click(function(){/////////////????????????????????????
-    for (var i = 0; i < carArray.length; i++) {
-        
-        if (carArray[i] === "Mazda") {
-          found = true;
-          console.log('yes')
-        }else{
-            console.log('not')
-        }
-          break;
-}})
+$('#buttonMenu').on('click', '.gifbutton', function(){/////////////????????????????????????
+     console.log($(this).data('index'))
+});
     
 
 newvar=['first', 'second']
@@ -53,8 +43,9 @@ newvar=['first', 'second']
 function getData(){
 
     // var userInput = $('#searchtext').val()
-    var userInput = $('#searchtext').val();
 
+    var userInput = $('#searchtext').val();
+    
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userInput + "&api_key=lj5JtcnVU0ydCVDeb7Y7pj7m3ZyfY3k4&limit=10&offset=0&rating=PG&lang=en";
 
     $.ajax({
@@ -62,7 +53,7 @@ function getData(){
         method: "GET"
     }).then(function(response) {
         console.log(response);
-
+        $('#results').empty()
         for (i in response.data){
             $('#results').append("<img src='"+response.data[i].images.original.url+"'style='margin-left:56px;margin-top:30px;height:250px; width:450px; opacity:1'/>");
         }
