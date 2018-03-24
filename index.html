@@ -15,7 +15,8 @@
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" style="color:red;">Car GIF Lookup App</a>
         <form class="form-inline">
-            <input id="searchtext" class="form-control mr-sm-2" type="search"  placeholder="Search by Brand" aria-label="Search" >
+            <input id="searchtext" class="form-control mr-sm-2" type="search"  placeholder="Search by Brand" aria-label="Search" onkeydown = "if (event.keyCode == 13)
+            document.getElementById('btnSearch').click()">
             <button id="btnSearch" class="btn btn-danger my-2 my-sm-0" type="button" onclick="getData()">Go</button>
         </form>
     </nav>
@@ -23,25 +24,8 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <div id="buttonMenu">
-                    <button id="test">test</button>
-                </div>
-                <div id="results"></div>
-                <!-- <div class="row">
-                <div class="col">
-                    
-                </div>
-                </div>
-                <div class="row">
-                <div class="col">
-                    First Row
-                </div>
-                <div class="col">
-                    First Row
-                </div>
-                <div class="col">
-                    First Row
-                </div> -->
+                <div id="gifButton"></div>
+                <div id="carArray-view"></div>
             </div>
         </div>
     </div>
