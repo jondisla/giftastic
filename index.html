@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
     <!-- Latest compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     
@@ -13,16 +14,16 @@
 <body>
     <div id="searchBox"></div>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" style="color:red;">Car GIF Lookup App</a>
+        <a class="navbar-brand" style="color:red;"><h1>Car GIF Lookup App</h1></a>
         <form class="form-inline">
-            <input id="searchtext" class="form-control mr-sm-2" type="search"  placeholder="Search by Brand" aria-label="Search" onkeydown = "if (event.keyCode == 13)
-            document.getElementById('btnSearch').click()">
-            <button id="btnSearch" class="btn btn-danger my-2 my-sm-0" type="button" onclick="getData()">Go</button>
+            <input id="searchtext" class="form-control mr-sm-2" type="search"  placeholder="Search by Brand" aria-label="Search">
+            <button id="btnSearch" class="btn btn-danger my-2 my-sm-0" type="button">Go</button>
         </form>
     </nav>
     </div>
     <div class="container">
         <div class="card">
+            
             <div class="card-body">
                 <div id="gifButton"></div>
                 <div id="carArray-view"></div>

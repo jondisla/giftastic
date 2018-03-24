@@ -1,8 +1,8 @@
 var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS'];
       var aprvdArray = [ ]
 
-      // displayMovieInfo function re-renders the HTML to display the appropriate content
-      function displayMovieInfo() {
+      // display function re-renders the HTML to display the appropriate content
+      function displayCarInfo() {
 
         var userInput = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userInput + "&api_key=lj5JtcnVU0ydCVDeb7Y7pj7m3ZyfY3k4&limit=10&offset=0&rating=PG&lang=en";
@@ -48,7 +48,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
 
           // Then dynamicaly generating buttons for each userInput in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<button>");
+          var a = $('<button id="buttons" class="btn btn-primary" style="margin-left:5px;margin-bottom:5px">');
           // Adding a class of userInput-btn to our button
           a.addClass("userInput-btn");
           // Adding a data-attribute
@@ -60,15 +60,21 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
         }
       }
       
-    
+      $("#searchtext").keyup(function(event){
+        if (event.keycode === 13){
+            $('#searchText').click()
+        }
+    })
     
 
       // This function handles events where a userInput button is clicked
       $("#btnSearch").on("click", function(event) {
         event.preventDefault();
         // This line grabs the input from the textbox
+
         var userInput = $("#searchtext").val().trim().toLowerCase();
         
+
         if(userInput === 'honda' || userInput === 'jeep'|| userInput === 'mitsubishi'|| userInput === 'hyundai'|| userInput === 'volkswagon'||userInput ===  'toyota'||userInput ===  'fiat'||userInput ===  'mazda'||userInput ===  'gmc'||userInput ===  'audi'||userInput ===  'cadillac'||userInput ===  'ford'||userInput ===  'lincoln'||userInput ===  'chevrolet'||userInput ===  'chevy'||userInput ===  'chrysler'||userInput ===  'buick'||userInput ===  'tesla'||userInput ===  'pontiac'||userInput ===  'dodge'||userInput ===  'acura'||userInput ===  'infiniti'||userInput ===  'lexus'||userInput ===  'isuzu'||userInput ===  'suzuki'||userInput ===  'nissan'||userInput ===  'cobra'||userInput ===  'hyundai'||userInput ===  'kia'||userInput ===  'renault'||userInput ===  'volvo'||userInput ===  'saab'||userInput ===  'lotus'||userInput ===  'mini'||userInput ===  'mini cooper'||userInput ===  'rolls royce'||userInput ===  'land rover'||userInput ===  'lamborghini'||userInput ===  'aston martin'){
         console.log('Working...')
           }else{
@@ -84,7 +90,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
       });
 
       // Adding a click event listener to all elements with a class of "userInput-btn"
-      $(document).on("click", ".userInput-btn", displayMovieInfo);
+      $(document).on("click", ".userInput-btn", displayCarInfo);
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
