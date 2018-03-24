@@ -16,7 +16,8 @@
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" style="color:red;"><h1>Car GIF Lookup App</h1></a>
         <form class="form-inline">
-            <input id="searchtext" class="form-control mr-sm-2" type="search"  placeholder="Search by Brand" aria-label="Search">
+                <form id="userInput-form">
+                        <input type="text" id="searchtext" placeholder="Enter car brand" onsubmit="return false">
             <button id="btnSearch" class="btn btn-danger my-2 my-sm-0" type="button">Go</button>
         </form>
     </nav>

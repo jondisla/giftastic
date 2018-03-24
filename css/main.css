@@ -17,5 +17,33 @@ body{
 }
 
 #carArray-view{
+    margin-left: 50px;
     display: inline-block;
+}
+
+img{
+    width: 400px;
+}
+
+@media only screen and (max-width: 1200px){
+    img{
+        width: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 990px){
+    
+    img{
+        width: 75%;
+    }
+
+}
+
+@media only screen and (max-width: 770px){
+    
+    img{
+        width: 65%;
+    }
+
 }

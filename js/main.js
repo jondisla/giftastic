@@ -24,7 +24,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
           var imgURL = response.data[i].images.original.url;
 
           // Creating an element to hold the image
-          var image = $("<img style= margin-left:56px;margin-top:30px;height:250px; width:450px; opacity:1>").attr("src", imgURL );
+          var image = $("<img class=img-fluid alt=Responsive image style= margin-left:56px;margin-top:30px;height:250px; width:450px; opacity:1>").attr("src", imgURL );
             
           // Appending the image
           carDiv.append(image);
@@ -35,7 +35,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
         });
 
       }
-
+      
       // Function for displaying userInput data
       function renderButtons() {
 
@@ -60,11 +60,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
         }
       }
       
-      $("#searchtext").keyup(function(event){
-        if (event.keycode === 13){
-            $('#searchText').click()
-        }
-    })
+    
     
 
       // This function handles events where a userInput button is clicked
@@ -73,7 +69,7 @@ var carArray = ['MCLAREN', 'SUBARU', 'FERRARI', 'BMW', 'BUGATTI', 'JAGUAR MOTORS
         // This line grabs the input from the textbox
 
         var userInput = $("#searchtext").val().trim().toLowerCase();
-        
+      
 
         if(userInput === 'honda' || userInput === 'jeep'|| userInput === 'mitsubishi'|| userInput === 'hyundai'|| userInput === 'volkswagon'||userInput ===  'toyota'||userInput ===  'fiat'||userInput ===  'mazda'||userInput ===  'gmc'||userInput ===  'audi'||userInput ===  'cadillac'||userInput ===  'ford'||userInput ===  'lincoln'||userInput ===  'chevrolet'||userInput ===  'chevy'||userInput ===  'chrysler'||userInput ===  'buick'||userInput ===  'tesla'||userInput ===  'pontiac'||userInput ===  'dodge'||userInput ===  'acura'||userInput ===  'infiniti'||userInput ===  'lexus'||userInput ===  'isuzu'||userInput ===  'suzuki'||userInput ===  'nissan'||userInput ===  'cobra'||userInput ===  'hyundai'||userInput ===  'kia'||userInput ===  'renault'||userInput ===  'volvo'||userInput ===  'saab'||userInput ===  'lotus'||userInput ===  'mini'||userInput ===  'mini cooper'||userInput ===  'rolls royce'||userInput ===  'land rover'||userInput ===  'lamborghini'||userInput ===  'aston martin'){
         console.log('Working...')
